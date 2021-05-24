@@ -33,7 +33,7 @@
   }
   
   h2 {
-    color: red;
+    color: #FF0000;
     font-weight: 600;
     margin: 0.5rem;
   }
@@ -86,7 +86,7 @@
   /*         IDs          */
   
   #card1, #card2 {
-    background-color: rgb(212, 166, 174);
+    background-color: rgb(101, 144, 102);
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -96,7 +96,7 @@
   }
   
   #initialsBox {
-    background-color: rgb(212, 166, 174);
+    background-color: rgb(101, 144, 102);
     border-color: purple;
     height: 3rem;
     font-size: 2rem;

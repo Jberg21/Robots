@@ -1,6 +1,6 @@
-// Global variables, questions are stored in questions.js
-var beginQuiz = document.querySelector("beginBtn");
-var leaderBtn = document.querySelector("leaderBtn");
+
+var beginQuiz = document.querySelector("#beginBtn");
+var leaderBtn = document.querySelector("#leaderBtn");
 var timerDisplay = document.querySelector(".timer");
 var gameCard = document.querySelector("#gameCard");
 var question = document.querySelector("#question");
@@ -30,7 +30,7 @@ var timeInterval;
 getScore();
 // -----------------------------------------------------------------------------
 
-// Running the timer for the quiz
+// Running the timer
 function timer() {
   timeInterval = setInterval(function () {
     timeLeft--;
@@ -44,7 +44,7 @@ function timer() {
 }
 // -----------------------------------------------------------------------------
 
-// Displaying questions & answers from questionBank
+// QuestionBank
 function displayQA() {
   if (q < questionBank.length) {
     question.textContent = questionBank[q].question;
@@ -58,17 +58,17 @@ function displayQA() {
 }
 // -----------------------------------------------------------------------------
 
-// Informing player if chosen answer is right or wrong
+// Correct or Incorrect
 function compareAnswer(event) {
   if (q >= questionBank.length) {
     gameOver();
     clearInterval(timeInterval);
   } else {
     if (event === questionBank[q].answer) {
-      feedback1.textContent = "You are correct!";
+      feedback1.textContent = "Correct!";
     } else {
       timeLeft -= 10;
-      feedback1.textContent = "You are Wrong!";
+      feedback1.textContent = "Incorrect!";
     }
     score = timeLeft;
     q++;
@@ -77,7 +77,7 @@ function compareAnswer(event) {
 }
 // -----------------------------------------------------------------------------
 
-// Getting scores from local storage
+// Getting scores
 function getScore() {
   var storedScore = JSON.parse(localStorage.getItem("highScore"));
   if (storedScore !== null) {
@@ -104,7 +104,7 @@ function gameOver() {
 }
 // -----------------------------------------------------------------------------
 
-// Keeping track of top 10 leaders from local storage w/ loop
+// Keeping track of top 10
 function leaderBoard() {
   removeFromLeaderBoard();
   addToLeaderBoard();
